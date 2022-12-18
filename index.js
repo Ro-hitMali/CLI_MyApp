@@ -28,30 +28,30 @@ console.log(add(4,6));
 
 // array of objects
 var questions = [{
-  question: "Where do I live? ",
+  question: "Where do I live? (Delhi, Maharashtra, Banglore) ",
   answer: "Banglore"
 }, {
-  question: "My favorite superhero is? ",
+  question: "My favorite superhero is? (Ironman, superMan, batMan) ",
   answer: "IronMan"
 },
 {
-  question: "Where do I work? ",
+  question: "Where do I work? (Accenture, SLK, TCS) ",
   answer: "SLK Software"
-},{
-  question: "What is my favourite game?",
+}, {
+  question: "What is my favourite game? (Cricket, Chess, Badminton) ",
   answer: "Chess"
-},{
-  question: "What is my hobby?",
+}, {
+  question: "What is my hobby? (ReadingBooks, Travelling, bikeRiding) ",
   answer: "Travelling"
-},{
-  question: "What is my age?",
+}, {
+  question: "What is my age? (23,24,25) ",
   answer: "25"
 }];
 
 function welcome() {
- var userName = readlineSync.question("What's your name? ");
+  var userName = readlineSync.question("What's your name? ");
 
-  console.log("Welcome "+ userName + " to DO YOU KNOW Rohit?");
+  console.log("Welcome " + userName + " to DO YOU KNOW Rohit? ");
 }
 
 
@@ -62,10 +62,10 @@ function play(question, answer) {
   if (userAnswer.toUpperCase() === answer.toUpperCase()) { // branching
     console.log("Yup! you are right");
     score = score + 1;
-    
+
   } else {
     console.log("Sry! you are wrong");
-   
+
   }
 
   console.log("current score: ", score);
@@ -73,7 +73,7 @@ function play(question, answer) {
 }
 
 function game() {
-  for (var i=0; i<questions.length; i++) {
+  for (var i = 0; i < questions.length; i++) {
     var currentQuestion = questions[i];
     play(currentQuestion.question, currentQuestion.answer)
   }
@@ -82,14 +82,11 @@ function game() {
 function showScores() {
   console.log("YAY! You SCORED: ", score);
 
-  console.log("Check out the high scores, if you should be there ping me and I'll update it");
-
+  console.log("Check out the high scores mentioned below, if you want to be there ping me and I'll update it");
   highScores.map(score => console.log(score.name, " : ", score.score))
 }
 
 
 welcome();
-play();
 game();
 showScores();
-
